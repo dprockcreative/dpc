@@ -8,7 +8,7 @@ Date.prototype.getOffsetDay = function (offset) {
 
 Date.prototype.getIsoDay = function() {
     var d = this.getDay();
-	return (d > 0) ? d:7;
+    return (d > 0) ? d:7;
 }
 
 angular
@@ -63,29 +63,29 @@ angular
             return new Date(dtg.getTime());
         };
 
-		this.dayToIsoDay = function (days, day) {
-			if (days[0].charAt(0).toLowerCase() === 's' && days[1].charAt(0).toLowerCase() === 'm') {
-				var d = days.shift();
-				days.push(d);
-			}
-			return days[day-1];
-		};
+        this.dayToIsoDay = function (days, day) {
+            if (days[0].charAt(0).toLowerCase() === 's' && days[1].charAt(0).toLowerCase() === 'm') {
+                var d = days.shift();
+                days.push(d);
+            }
+            return days[day-1];
+        };
 
-		this.daysToIsoDays = function (days) {
-			if (days[0].charAt(0).toLowerCase() === 's' && days[1].charAt(0).toLowerCase() === 'm') {
-				var d = days.shift();
-				days.push(d);
-			}
-			return {
-				1: days[0],
-				2: days[1],
-				3: days[2],
-				4: days[3],
-				5: days[4],
-				6: days[5],
-				7: days[6]
-			};
-		};
+        this.daysToIsoDays = function (days) {
+            if (days[0].charAt(0).toLowerCase() === 's' && days[1].charAt(0).toLowerCase() === 'm') {
+                var d = days.shift();
+                days.push(d);
+            }
+            return {
+                1: days[0],
+                2: days[1],
+                3: days[2],
+                4: days[3],
+                5: days[4],
+                6: days[5],
+                7: days[6]
+            };
+        };
 
         this.daysIn = function (year, month) {
             return 32 - new Date(year, month, 32).getDate();

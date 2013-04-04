@@ -5,18 +5,18 @@ angular
     .module('formsProvider', [])
     .factory('forms', function () {
         function Form(id, onchange) {
-        	this.id = id || '';
-        	this.source = [];
+            this.id = id || '';
+            this.source = [];
             this.onchange = onchange;
             this.checkbox = {
                 checked: false, labels: {checked: 'On', unchecked: 'Off' }
             };
             this.radio = {
-            	selected: null,
-            	options: [],
-            	get: function () { return this.selected; },
-            	set: function (selected) { this.selected = selected; },
-            	is : function (index) { return (this.get() === index); }
+                selected: null,
+                options: [],
+                get: function () { return this.selected; },
+                set: function (selected) { this.selected = selected; },
+                is : function (index) { return (this.get() === index); }
             };
             return this;
         }
@@ -31,26 +31,26 @@ angular
                 $timeout(function () {
                     try {
 
-						var type = 'string';
+                        var type = 'string';
 
                         $scope.Forms = new forms($scope.$id);
                         $scope.$watch(
                             function () { return $scope.dpcFormSource; },
                             function (source) {
-                            	if (!$scope.Forms.radio.options.length) {
-                            		type = typeof source[0];
-                            		$scope.Forms.radio.options = source;
-                            	}
+                                if (!$scope.Forms.radio.options.length) {
+                                    type = typeof source[0];
+                                    $scope.Forms.radio.options = source;
+                                }
                             },
                         true);
 
                         $scope.$watch(
                             function () { return $scope.Forms.radio.selected; },
                             function (selected) {
-                            	if (angular.isNumber(selected)) {
-	                            	$scope.dpcFormModel = (type === 'object') ? $scope.dpcFormSource[selected].value:$scope.dpcFormSource[selected];
-                            	}
-	                        },
+                                if (angular.isNumber(selected)) {
+                                    $scope.dpcFormModel = (type === 'object') ? $scope.dpcFormSource[selected].value:$scope.dpcFormSource[selected];
+                                }
+                            },
                         true);
 
                     } catch(e) {

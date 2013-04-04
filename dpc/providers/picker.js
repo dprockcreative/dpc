@@ -90,7 +90,7 @@ angular
                 try {
                     $scope.hours   = [12,1,2,3,4,5,6,7,8,9,10,11];
                     $scope.minutes = $.map(new Array(60), function(k, v){
-                    	return String(v>9?v:'0'+v);
+                        return String(v>9?v:'0'+v);
                     });
 
                     var dtg, name = $attrs.uiTimePicker || 'uiTimePicker_' + $scope.$id, active = false,
@@ -121,8 +121,8 @@ angular
                                     dtg = scheduleUtil.dtgLocaleISOString(scheduleUtil.parseLocaleISOString($scope.dpcModel));
                                     dtg.setHours($scope.uhour, Number(model.minute), 0);
                                     $scope.$emit('uiTimePickerUpdate', {
-                                    	name: name,
-                                    	value: scheduleUtil.toLocaleISOString(dtg)
+                                        name: name,
+                                        value: scheduleUtil.toLocaleISOString(dtg)
                                     });
                                     //$scope.dpcModel = scheduleUtil.toLocaleISOString(dtg);
                                 }
@@ -163,14 +163,14 @@ angular
                         this.value  = value;
                         this.active = true;
                         this.click  = function () {
-							var date = $scope.Calendar.dtg.getDate(), daysin;
-							$scope.Calendar.dtg.setDate(1);
-							$scope.Calendar.dtg.setMonth( ($scope.Calendar.dtg.getMonth() + this.value) );
-							daysin = $cal.daysIn($scope.Calendar.dtg.getFullYear(), $scope.Calendar.dtg.getMonth());
-							date = (date > daysin) ? daysin:date;
-							$scope.Calendar.dtg.setDate(date);
-							$scope.Calendar.Month.UI.Prev.check();
-							$scope.Calendar.Month.UI.Next.check();
+                            var date = $scope.Calendar.dtg.getDate(), daysin;
+                            $scope.Calendar.dtg.setDate(1);
+                            $scope.Calendar.dtg.setMonth( ($scope.Calendar.dtg.getMonth() + this.value) );
+                            daysin = $cal.daysIn($scope.Calendar.dtg.getFullYear(), $scope.Calendar.dtg.getMonth());
+                            date = (date > daysin) ? daysin:date;
+                            $scope.Calendar.dtg.setDate(date);
+                            $scope.Calendar.Month.UI.Prev.check();
+                            $scope.Calendar.Month.UI.Next.check();
                         };
                         this.check  = function () {
                             var year, years = $scope.Calendar.Year.years, proposed = $cal.cloneDate($scope.Calendar.dtg);
@@ -188,12 +188,12 @@ angular
                         UI: {
                             opened: false,
                             kill: function () {
-								angular.element(document.querySelector('body')).unbind('keydown', eskape);
-								$scope.Calendar.dtg  = null;
-								$scope.Calendar.dstr = '';
-                            	$timeout(function() {
-									$scope.Calendar.UI.opened = false;
-								});
+                                angular.element(document.querySelector('body')).unbind('keydown', eskape);
+                                $scope.Calendar.dtg  = null;
+                                $scope.Calendar.dstr = '';
+                                $timeout(function() {
+                                    $scope.Calendar.UI.opened = false;
+                                });
                             },
                             toggle: function () {
                                 this.opened = !this.opened;
@@ -238,8 +238,8 @@ angular
                     //$log.log($scope.Calendar);
 
                     var name = $attrs.uiMinical || 'uiMinical_' + $scope.$id,
-                    	bookends = $scope.gbBookends && $.map($scope.gbBookends.split(','), function (bookend) { return scheduleUtil.fromIsoDate(bookend); }) || [],
-                    	updateModel = function (date) {
+                        bookends = $scope.gbBookends && $.map($scope.gbBookends.split(','), function (bookend) { return scheduleUtil.fromIsoDate(bookend); }) || [],
+                        updateModel = function (date) {
                         if (date) {
                             var dtg = $cal.cloneDate($scope.Calendar.dtg),
                             parts = scheduleUtil.parseLocaleISOString($scope.dpcModel);
@@ -248,8 +248,8 @@ angular
                             }
                             dtg.setDate(date);
                             $scope.$emit('uiMinicalUpdate', {
-                            	name: name,
-                            	value: scheduleUtil.toLocaleISOString(dtg)
+                                name: name,
+                                value: scheduleUtil.toLocaleISOString(dtg)
                             });
                         }
                         $timeout(function () {
@@ -335,11 +335,11 @@ angular
                         }
                     },
                     bookended = function (dtg) {
-                    	if (!bookends.length) {
-                    		return false;
-                    	}
-                    	var strDate = scheduleUtil.jsDateAsStringDate(dtg);
-						return (bookends[0] > strDate || (bookends[1] && bookends[1] < strDate));
+                        if (!bookends.length) {
+                            return false;
+                        }
+                        var strDate = scheduleUtil.jsDateAsStringDate(dtg);
+                        return (bookends[0] > strDate || (bookends[1] && bookends[1] < strDate));
                     };
 
                     $scope.Calendar.Year.years = buildYears();
@@ -351,7 +351,7 @@ angular
                         function () { return $scope.Calendar.dtg && $scope.Calendar.dtg.getTime(); },
                         function (time) {
                             if (angular.isDate($scope.Calendar.dtg)) { // $log.log('DTG', dtg);
-                            	var dtg = $scope.Calendar.dtg;
+                                var dtg = $scope.Calendar.dtg;
                                 $scope.Calendar.Month.value = dtg.getMonth();
                                 $scope.Calendar.Year.value  = dtg.getFullYear();
                                 $timeout(function () {

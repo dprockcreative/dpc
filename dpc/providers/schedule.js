@@ -165,7 +165,7 @@ angular
                 case 'date':
                     $this.date = data.value;
                     $this.Label.start = scheduleUtil.stringDateAsNiceDate($this.date);
-	                update();
+                    update();
                 break;
             };
         });
@@ -176,7 +176,7 @@ angular
                     $this.date = data.value;
                     $this.Label.start = scheduleUtil.stringDateAsNiceDate($this.date);
                     $this.time = scheduleUtil.fromIsoTime($this.date);
-	                update();
+                    update();
                 break;
             };
         });
@@ -193,37 +193,37 @@ angular
 
                 var STARTTIME = '00:00',
                     dateHandler = function (obj, node, type) {
-						var date = {start: 'date'},
-							time = {start: 'time'},
-							dates = {
-								start: function () { return obj.dates && obj.dates[0]; }
-							}[type],
-							datetime = {
-								start: function () { var t = obj.dates && scheduleUtil.fromIsoTime(obj.dates[0]) || null; return t || STARTTIME; }
-							}[type],
-							times = {
-								start: function () { return obj.time ? obj.time: datetime(); }
-							}[type];
+                        var date = {start: 'date'},
+                            time = {start: 'time'},
+                            dates = {
+                                start: function () { return obj.dates && obj.dates[0]; }
+                            }[type],
+                            datetime = {
+                                start: function () { var t = obj.dates && scheduleUtil.fromIsoTime(obj.dates[0]) || null; return t || STARTTIME; }
+                            }[type],
+                            times = {
+                                start: function () { return obj.time ? obj.time: datetime(); }
+                            }[type];
 
-						if (!node) {
-							node = dates();
-						}
+                        if (!node) {
+                            node = dates();
+                        }
 
-						if (node && obj[time[type]]) {
-							node = scheduleUtil.fromIsoDate(node) + 'T' + obj[time[type]];
-						}
+                        if (node && obj[time[type]]) {
+                            node = scheduleUtil.fromIsoDate(node) + 'T' + obj[time[type]];
+                        }
 
-						if (node.indexOf('T') < 0) {
-							node += 'T' + times();
-						}
+                        if (node.indexOf('T') < 0) {
+                            node += 'T' + times();
+                        }
 
-						if (!obj[time[type]]) {
-							obj[time[type]] = scheduleUtil.fromIsoTime(node);
-						}
+                        if (!obj[time[type]]) {
+                            obj[time[type]] = scheduleUtil.fromIsoTime(node);
+                        }
 
-						obj[date[type]] = node;
+                        obj[date[type]] = node;
 
-						return obj;
+                        return obj;
                     };
 
                 $scope.Schedule = {

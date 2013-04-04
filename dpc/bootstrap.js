@@ -5,31 +5,31 @@
 $script('//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', 'jquery');
 $script.ready('jquery', function(){
 
-	$script('//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js', 'angularjs');
+    $script('//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js', 'angularjs');
 
-	$script.ready('angularjs', function(){
+    $script.ready('angularjs', function(){
 
-		$script([
-			'util/modernizr.min.js',
-			'util/jquery.sprintf.min.js'
-			], 'mod');
+        $script([
+            'util/modernizr.min.js',
+            'util/jquery.sprintf.min.js'
+            ], 'mod');
 
-		$script.ready('mod', function(){
+        $script.ready('mod', function(){
 
-			$script([
-				'providers/dnd.js',
-				'providers/forms.js',
-				'providers/picker.js',
-				'providers/calendar.js',
-				'providers/schedule.js'
-			], 'providers');
-			$script(['directives/directive.js'], 'directives');
-			$script(['controllers/controller.js'], 'controllers');
-			$script(['app/index.js'], 'app');
+            $script([
+                'providers/dnd.js',
+                'providers/forms.js',
+                'providers/picker.js',
+                'providers/calendar.js',
+                'providers/schedule.js'
+            ], 'providers');
+            $script(['directives/directive.js'], 'directives');
+            $script(['controllers/controller.js'], 'controllers');
+            $script(['app/index.js'], 'app');
 
-			$script.ready(['providers', 'directives', 'controllers', 'app'], function(){
-				angular.bootstrap(document, ['dpc-app']);
-			});
-		});					
-	});
+            $script.ready(['providers', 'directives', 'controllers', 'app'], function(){
+                angular.bootstrap(document, ['dpc-app']);
+            });
+        });                    
+    });
 });

@@ -1,0 +1,19 @@
+DirectoryIndex index.htm
+
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^localhost$
+RewriteCond %{REQUEST_URI} !^/dpc/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /dpc/$1
+RewriteCond %{HTTP_HOST} ^localhost$
+RewriteRule ^(/)?$ dpc/ [L]
+
+RewriteCond %{HTTP_HOST} ^mobile.localhost$
+RewriteCond %{REQUEST_URI} !^/mobile/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /mobile/$1
+RewriteCond %{HTTP_HOST} ^mobile.localhost$
+RewriteRule ^(/)?$ mobile/ [L]

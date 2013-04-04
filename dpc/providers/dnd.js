@@ -76,10 +76,10 @@ angular
             this.end = function(e){
                 $this.event = 'end';
                 if($this.moving){
-					$doc.unbind('mousemove touchmove', $this.drag);
-					$doc.unbind('mouseup touchend', $this.end);
-					$this.moving = false;
-				}
+                    $doc.unbind('mousemove touchmove', $this.drag);
+                    $doc.unbind('mouseup touchend', $this.end);
+                    $this.moving = false;
+                }
                 $scope.$emit($this.name, $this);
             };
 
@@ -332,12 +332,12 @@ angular
                         if (!suppress){ $scope.$emit($this.name, $this); }
                     },
                     end: function(e){
-						$this.event = 'end';
-						if($this.moving){
-							$this.moving = false;
+                        $this.event = 'end';
+                        if($this.moving){
+                            $this.moving = false;
                             dragui.$doc.unbind('mousemove touchmove', $this.drag);
                             dragui.$doc.unbind('mouseup touchend', $this.end);
-						}
+                        }
                         $timeout(function(){
                             if ($this.recenter){
                                 $this.css = {};
