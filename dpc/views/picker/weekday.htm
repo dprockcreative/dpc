@@ -1,0 +1,9 @@
+<ul class="dual-picker">
+	<li class="wide" ui-date-time-picker="weekday.value as weekday.label for weekday in weekdays" dpc-model="weekday">
+		<div>
+			<select class="clean" ng-options="weekday.value as weekday.label for weekday in weekdays" ng-model="weekday"></select>
+		</div>
+		<button type="button" class="clean right top" gb-track-category="weekday" gb-track-name="up" ng-click="up()"><span></span></button><button type="button" class="clean right bottom" gb-track-category="weekday" gb-track-name="down" ng-click="down()"><span></span></button>
+		<var>{{display}}</var>
+	</li>
+</ul>

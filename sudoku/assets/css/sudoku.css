@@ -1,0 +1,158 @@
+#sTableContainer {
+	position: relative;
+	display: block;
+	font-family: Helvetica,Arial,sans-serif;
+	text-align: center;
+	background-color: rgba(255,255,255,0.8);
+	overflow: hidden;
+}
+
+#sMC {
+	position: absolute;
+	top: 115px;
+	right: 50px;
+	left: 50px;
+	z-index: 0;
+
+	display: block;
+	width: 200px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: rgba(255,255,255,0.9);
+	border: 1px solid #333;
+
+	box-shadow: 0 0 3px rgba(51,51,51,0.8), 0 0 7px rgba(0,0,0,0.2) inset;
+
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+
+	opacity: 0;
+
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+}
+
+#sMC.show {
+	z-index: 20;
+	opacity: 1;
+}
+
+#sMC span {
+	display: block;
+	margin: 14px;
+	font-size: 12pt;
+	line-height: 1.2em;
+}
+
+/* =================== *
+ *	Conditionals
+ * =================== */
+
+/*
+ * Portrait Mode - handheld
+ */
+@media only screen and (min-width: 320px) {
+	body { width: 320px;height: 480px; }
+	
+	#sTableContainer { width: 320px;height: 435px; }
+
+	table#sTable {
+		margin: 8px 0 6px 10px;
+	}
+
+	table#sTable tbody tr td.row-9 {
+		border-bottom: 1px solid rgba(0,0,0,0.8);
+	}
+
+	#sMetrics, #sControls {
+    	width: 320px;
+	}
+ 
+	#sControls ul:last-child {
+		padding-bottom: 7px;
+	}
+
+	footer {
+		height: 25px;
+	}
+}
+
+/*
+ * Landscape Mode - handheld
+ */
+@media only screen and (min-width: 480px) {
+	body { width: 480px;height: 300px; }
+
+	#sTableContainer { width: 480px;height: 300px; }
+
+	table#sTable {
+		position: absolute;
+		top: 0;
+		margin: 4px 0 0 4px;
+	}
+
+	table#sTable tbody tr td.row-9 {
+		border-bottom: none;
+	}
+
+	#sMetrics, #sControls {
+		left: 310px	;
+		width: 145px;
+		border-left: 1px solid rgba(0,0,0,0.3);
+	}
+	
+	#sControls {
+		height: 218px;
+	}
+
+	#sMetrics {
+	}
+
+	#sMetrics ul {
+		padding-top: 5px;
+	}
+
+	#sControls ul:first-child {
+	    width: 100px;
+		padding-top: 10px;
+	}
+
+	#sMetrics ul li label {	
+	    min-width: 120px;
+	    text-align: right;
+	}
+
+	#sMetrics ul li {
+		margin-top: 1px;
+		margin-bottom: 3px;
+	}
+
+	#sControls ul li button.reset {
+		width: 88px;
+	}
+
+	footer {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 25px;
+		height: 300px;
+	}
+
+	footer nav ul li {
+	}
+}
+
+/*
+ * Portrait Mode - tablet
+ */
+@media only screen and (min-width: 768px) {
+}
+
+/*
+ * Landscape Mode - tablet
+ */
+@media only screen and (min-width: 1024px) {
+}

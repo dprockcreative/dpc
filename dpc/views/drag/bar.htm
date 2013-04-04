@@ -1,0 +1,8 @@
+<div ui-drag-stretch="{{Dragbar.name}}Stretch" ui-drag-container="#{{Dragbar.name}}" ui-drag-axis="x" ng-style="Draggable.css" class="spanner">
+	<a ui-drag-handle="start" draggable="{{Dragbar.start.item}}" class="dragger start"><mark></mark>
+		<label ng-bind="Dragbar.start.label"></label>
+	</a>
+	<a ui-drag-handle="end" draggable="{{Dragbar.end.item}}" class="dragger end"><mark></mark>
+		<label ng-bind="Dragbar.end.label"></label>
+	</a>
+</div>

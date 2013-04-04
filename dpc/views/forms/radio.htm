@@ -1,0 +1,3 @@
+<div class="ui-forms radio inline">
+	<label ng-repeat="item in Forms.radio.options" ng-class="{selected: Forms.radio.is($index)}"><span ng-bind="item.label|capitalize"></span><input type="radio" name="uiForms_{{Forms.id}}" ng-value="$index" ng-model="Forms.radio.selected" ng-checked="Forms.radio.is($index)" ng-disabled="dpcDisabled"/></label>
+</div>

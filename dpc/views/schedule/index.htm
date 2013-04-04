@@ -1,0 +1,22 @@
+<blockquote ng-controller="scheduleInstanceController">
+	<ul class="mini-cal-list">
+		<li ng-repeat="occurrence in Schedule.list" ng-init="scheduleInstance.Load($index, occurrence)">
+			<div class="mini-cal">
+				<label>
+					Date
+					<input type="text" class="mini-cal-date" readonly="true" ng-model="Schedule.summary"/>
+				</label>
+				<div ui-minical="date" class="mini-cal-calendar" dpc-model="scheduleInstance.date"></div>
+			</div>
+			<div class="mini-cal-pickers">
+				<label for="noop">
+					Time
+					<div ui-time-picker="time" dpc-model="scheduleInstance.date"></div>
+				</label>
+			</div>
+		</li>
+	</ul>
+	<p>
+		<small>internal iso date: <span ng-bind="scheduleInstance.date"></span></small>
+	</p>	
+</blockquote>

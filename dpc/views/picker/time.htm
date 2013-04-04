@@ -1,0 +1,20 @@
+<div>
+	<ul class="dual-picker">
+		<li class="time" ui-date-time-picker="hour as hour for hour in hours" dpc-model="model.hour" ng-class="{disabled: dpcDisabled}">
+			<button type="button" class="clean left top" gb-track-category="time" gb-track-name="up" ng-click="up()" ng-disabled="dpcDisabled" tabindex="-1"><span></span>
+			</button><button type="button" class="clean left bottom" gb-track-category="time" gb-track-name="down" ng-click="down()" ng-disabled="dpcDisabled" tabindex="-1"><span></span>
+			</button>
+			<var>{{display}}</var>
+			<div><select class="clean" ng-model="model.hour" ng-options="label for label in hours" ng-disabled="dpcDisabled" tabindex="-1"></select></div>
+		</li><li class="separator" ng-class="{disabled: dpcDisabled}">
+			<span>:</span>
+		</li><li class="time" ui-date-time-picker="minute as minute for minute in minutes" dpc-model="model.minute" ng-class="{disabled: dpcDisabled}">
+			<button type="button" class="clean right top" gb-track-category="time" gb-track-name="up" ng-click="up()" ng-disabled="dpcDisabled" tabindex="-1"><span></span>
+			</button><button type="button" class="clean right bottom" gb-track-category="time" gb-track-name="down" ng-click="down()" ng-disabled="dpcDisabled" tabindex="-1"><span></span>
+			</button>
+			<var>{{display}}</var>
+			<div><select class="clean" ng-model="model.minute" ng-options="label for label in minutes" ng-disabled="dpcDisabled" tabindex="-1"></select></div>
+		</li>
+	</ul>
+	<div ui-forms-checkbox dpc-form-model="model.meridian" gb-label-checked="am" gb-label-unchecked="pm" dpc-disabled="dpcDisabled" tabindex="-1"></div>
+</div>

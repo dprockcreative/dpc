@@ -1,0 +1,42 @@
+<table>
+	<tbody>
+		<tr>
+			<td>
+				<label>Month</label>
+				<ul class="dual-picker">
+					<li class="wide" ui-date-time-picker="month.value as month.label for month in months" dpc-model="month" ng-class="{disabled: dpcDisabled}">
+						<button type="button" class="clean right top" ng-click="up()" ng-disabled="dpcDisabled" tabindex="-1"><span></span></button><button type="button" class="clean right bottom" ng-click="down()" ng-disabled="dpcDisabled" tabindex="-1"><span></span></button>
+						<var>{{display}}</var>
+						<div>
+							<select class="clean" ng-options="month.value as month.label for month in months" ng-model="month" ng-disabled="dpcDisabled" tabindex="-1"></select>
+						</div>
+					</li>
+				</ul>
+			</td>
+			<td>
+				<label>Date</label>
+				<ul class="dual-picker">
+					<li ui-date-time-picker="day.value as day.label for day in days" dpc-model="day" ng-class="{disabled: dpcDisabled}">
+						<button type="button" class="clean right top" ng-click="up()" ng-disabled="dpcDisabled" tabindex="-1"><span></span></button><button type="button" class="clean right bottom" ng-click="down()" ng-disabled="dpcDisabled" tabindex="-1"><span></span></button>
+						<var>{{display}}</var>
+						<div>
+							<select class="clean" ng-options="day.value as day.label for day in days" ng-model="day" ng-disabled="dpcDisabled" tabindex="-1"></select>
+						</div>
+					</li>
+				</ul>
+			</td>
+			<td>
+				<label>Year</label>
+				<ul class="dual-picker">
+					<li class="med" ui-date-time-picker="year.value as year.label for year in years" dpc-model="year" ng-class="{disabled: dpcDisabled}">
+						<button type="button" class="clean right top" ng-click="up()" ng-disabled="dpcDisabled" tabindex="-1"><span></span></button><button type="button" class="clean right bottom" ng-click="down()" ng-disabled="dpcDisabled" tabindex="-1"><span></span></button>
+						<var>{{display}}</var>
+						<div>
+							<select class="clean" ng-options="year.value as year.label for year in years" ng-model="year" ng-disabled="dpcDisabled" tabindex="-1"></select>
+						</div>
+					</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
