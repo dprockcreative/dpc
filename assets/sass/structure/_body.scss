@@ -1,0 +1,124 @@
+html {
+  height: 100%;
+  font-size: 10px;
+
+  body {
+    @extend .flex-body-container;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+    font-weight: 300;
+    font-style: normal;
+    color: $white-09;
+    overflow: hidden;
+    background-color: $mine-shaft;
+
+    > div[id] {
+      position: inherit;
+      width: inherit;
+      height: inherit;
+      margin: inherit;
+      padding: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      font-style: inherit;
+      color: inherit;
+      overflow: inherit;
+      background-color: inherit;
+    }
+  }
+
+  &.debug {
+    body {
+      &:after {
+        content: "ALL";
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        display: block;
+        margin: 0;
+        padding: 0.3rem 0.5rem;
+        font-size: 9px;
+        font-weight: 600;
+        color: $white-05;
+        background-color: $black-02;
+        @include no-select();
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+*,
+:after,
+:before {
+  @include box-sizing(border-box);
+}
+
+p {
+  cursor: default;
+}
+
+a {
+  color: $white-08;
+  outline: 0;
+  text-decoration: none;
+
+  &:hover {
+    color: $white-08;
+    text-decoration: none;
+  }
+
+  &:active, &:focus {
+    color: $white-08;
+    text-decoration: none;
+    outline: 0;
+  }
+}
+
+var, mark {
+  font-size: 1.2rem !important;
+  font-weight: 300;
+  font-style: normal;
+  background-color: transparent;
+}
+
+var {
+  line-height: 1.8;
+  color: $white-05;
+}
+
+mark {
+  line-height: normal;
+  color: $white-05;
+}
+
+small {
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.text-align {
+  display: block;
+  &.left {
+    text-align: left;
+  }
+  &.right {
+    text-align: right;
+  }
+  &.center {
+    text-align: center;
+  }
+}

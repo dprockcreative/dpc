@@ -1,0 +1,60 @@
+.aside {
+  height: 100%;
+  padding: 5rem 0;
+  margin: 0;
+
+  > ul {
+    list-style: none;
+    text-align: left;
+    width: 22rem;
+    height: inherit;
+    margin: 0;
+    padding: 0 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    li {
+      margin: 0 0 0.5rem 0;
+      padding: 0.5rem 1rem;
+      font-size: 1.1rem;
+      font-weight: 200;
+      color: $white-04;
+      line-height: 1.4rem;
+      opacity: 1;
+      background-color: $black-005;
+      @include border(0.1rem dotted $white-02, false);
+      @include border-radius(0.3rem);
+
+      @include transition(opacity 1000ms 0s ease-out);
+
+      &.expired {
+        opacity: 0;
+      }
+
+      p {
+        margin: 0;
+        padding: 0.5rem 0;
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit;
+        line-height: inherit;
+      }
+
+      em {
+        font-style: normal;
+        font-weight: 400;
+        color: $white-06;
+      }
+
+      &:first-child {
+        color: $white-07;
+      	background-color: $black-02;
+
+        em {
+          color: $white-08;
+        }
+
+      }
+    }
+  }
+}

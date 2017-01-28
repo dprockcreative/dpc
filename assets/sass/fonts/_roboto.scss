@@ -1,0 +1,116 @@
+$path : '#{$font_src}roboto/' !default;
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 100;
+  @include fontsrc($path, 'roboto-thin-webfont', 'robotothin');
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 100;
+  @include fontsrc($path, 'roboto-thinitalic-webfont', 'robotothin_italic');
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 200;
+  @include fontsrc($path, 'roboto-light-webfont', 'robotolight');
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: lighter;
+  @include fontsrc($path, 'roboto-light-webfont', 'robotolight');
+}
+
+
+@font-face {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 200;
+  @include fontsrc($path, 'roboto-lightitalic-webfont', 'robotolight_italic');
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  @include fontsrc($path, 'roboto-regular-webfont', 'robotoregular');
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  @include fontsrc($path, 'roboto-regular-webfont', 'robotoregular');
+}
+
+
+@font-face {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 300;
+  @include fontsrc($path, 'roboto-italic-webfont', 'robotoitalic');
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  @include fontsrc($path, 'roboto-medium-webfont', 'robotomedium');
+}
+
+
+@font-face {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 400;
+  @include fontsrc($path, 'roboto-mediumitalic-webfont', 'robotomedium_italic');
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  @include fontsrc($path, 'roboto-bold-webfont', 'robotobold');
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  @include fontsrc($path, 'roboto-bold-webfont', 'robotobold');
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 500;
+  @include fontsrc($path, 'roboto-bolditalic-webfont', 'robotobold_italic');
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 600;
+  @include fontsrc($path, 'roboto-black-webfont', 'robotoblack');
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bolder;
+  @include fontsrc($path, 'roboto-bold-webfont', 'robotobold');
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 600;
+  @include fontsrc($path, 'roboto-blackitalic-webfont', 'robotoblack_italic');
+}

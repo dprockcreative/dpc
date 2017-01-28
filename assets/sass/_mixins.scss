@@ -1,0 +1,392 @@
+@mixin animation($params...){
+  -webkit-animation: $params;
+     -moz-animation: $params;
+          animation: $params;
+}
+
+@mixin transition($params...){
+  -webkit-transition: $params;
+     -moz-transition: $params;
+      -ms-transition: $params;
+       -o-transition: $params;
+          transition: $params;
+}
+
+@mixin transition-property($properties...){
+  -webkit-transition-property: $properties;
+     -moz-transition-property: $properties;
+      -ms-transition-property: $properties;
+       -o-transition-property: $properties;
+          transition-property: $properties;
+}
+
+@mixin transition-duration($duration...){
+  -webkit-transition-duration: $duration;
+     -moz-transition-duration: $duration;
+      -ms-transition-duration: $duration;
+       -o-transition-duration: $duration;
+          transition-duration: $duration;
+}
+
+@mixin transition-delay($delay...){
+  -webkit-transition-delay: $delay;
+     -moz-transition-delay: $delay;
+      -ms-transition-delay: $delay;
+       -o-transition-delay: $delay;
+          transition-delay: $delay;
+}
+
+@mixin transition-timing-function($timing...){
+  -webkit-transition-timing-function: $timing;
+     -moz-transition-timing-function: $timing;
+      -ms-transition-timing-function: $timing;
+       -o-transition-timing-function: $timing;
+          transition-timing-function: $timing;
+}
+
+@mixin transform($params...){
+  -webkit-transform: $params;
+     -moz-transform: $params;
+      -ms-transform: $params;
+       -o-transform: $params;
+          transform: $params;
+}
+
+@mixin backface-visibility($val){
+  -webkit-backface-visibility: $val;
+      -moz-backface-visiblity: $val;
+      -ms-backface-visibility: $val;
+          backface-visibility: $val;
+}
+
+@mixin box-sizing($type){
+  -webkit-box-sizing: $type;
+     -moz-box-sizing: $type;
+          box-sizing: $type;
+}
+
+@mixin box-shadow($params...){
+	-webkit-box-shadow: $params;
+		 -moz-box-shadow: $params;
+					box-shadow: $params;
+}
+
+@mixin border($params, $bool:true){
+  border: $params;
+  @if $bool {
+    outline: $params;
+  } @else {
+    outline: 0 none transparent;
+  }
+}
+
+@mixin borders($width:0, $style:none, $color:transparent){
+  border-width: $width;
+  border-style: $style;
+  border-color: $color;
+  outline: 0 none transparent;
+}
+
+@mixin border-radius($params...){
+  -webkit-border-radius: $params;
+     -moz-border-radius: $params;
+      -ms-border-radius: $params;
+          border-radius: $params;
+}
+
+@mixin input-field {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):not([type="reset"]), textarea { @content; }
+}
+
+@mixin input-field-content {
+  &:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):not([type="reset"]) { @content; }
+}
+
+@mixin input-range-thumb {
+  cursor: pointer;
+  height: 1.8rem;
+  width: 1.4rem;
+  background: $jumbo;
+  @include border(1px solid $black-07, false);
+  @include border-radius(0.3rem);
+}
+
+@mixin input-range-content {
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    margin: 0.5rem 0 0;
+
+    &:focus {
+      outline: 0;
+
+      &::-webkit-slider-runnable-track {
+        background: transparent;
+      }
+      &::-ms-fill-lower {
+        background: transparent;
+      }
+      &::-ms-fill-upper {
+        background: transparent;
+      }
+    }
+
+    &::-webkit-slider-runnable-track {
+      height: 0.3rem;
+      background: $black-03;
+      @include border(1px solid $black-07, false);
+      @include border-radius(0.3rem);
+    }
+
+    &::-webkit-slider-thumb {
+      @include input-range-thumb;
+      -webkit-appearance: none;
+      margin-top: -0.9rem;
+    }
+
+    &::-moz-range-track {
+      background: $black-03;
+      @include border(1px solid $black-07, false);
+      @include border-radius(0.3rem);
+    }
+
+    &::-moz-range-thumb {
+      @include input-range-thumb;
+    }
+
+    @content;
+  }
+}
+
+@mixin label-button(){
+  background-color: transparent;
+  @include box-shadow(none);
+  @include border-radius(0);
+  @include border(0 none transparent, false);
+  @include appearance(none);
+
+  &:active,
+  &:focus {
+    background-color: transparent;
+    @include box-shadow(none);
+    @include border-radius(0);
+    @include border(0 none transparent, false);
+    @include appearance(none);
+  }
+}
+
+@mixin icon-button {
+	button {
+		cursor: pointer;
+		min-width: unset;
+		margin: 0;
+		padding: 0;
+		background: none;
+		@include border(0 solid transparent, false);
+		@content;
+	}
+}
+
+@mixin icon-button($before:true, $width:inherit) {
+	button {
+		cursor: pointer;
+		min-width: unset;
+		width: $width;
+		margin: 0;
+		padding: 0;
+		background: none;
+		@include border(0 solid transparent, false);
+
+    &:before, &:after {
+      width: $width;
+    }
+
+    @if $before {
+      &:after {
+        display: none;
+      }
+    }
+    @else {
+      &:before {
+        display: none;
+      }
+    }
+		@content;
+	}
+}
+
+@mixin input-placeholder {
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+@mixin no-select {
+          user-select: none;
+-webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+     -ms-touch-action: none;
+}
+
+@mixin auto-select {
+          user-select: auto;
+-webkit-touch-callout: default;
+  -webkit-user-select: auto;
+   -khtml-user-select: auto;
+     -moz-user-select: auto;
+      -ms-user-select: auto;
+     -ms-touch-action: auto;
+}
+
+@mixin all-select {
+          user-select: text;
+-webkit-touch-callout: default;
+  -webkit-user-select: text;
+   -khtml-user-select: all;
+     -moz-user-select: text;
+      -ms-user-select: text;
+     -ms-touch-action: auto;
+}
+
+@mixin blur($radius){
+-webkit-filter: blur($radius);
+   -moz-filter: blur($radius);
+    -ms-filter: blur($radius);
+     -o-filter: blur($radius);
+        filter: blur($radius);
+}
+
+@mixin transform-scale3d($x:0, $y:0, $z:0){
+-webkit-transform: scale3d($x,$y,$z);
+   -moz-transform: scale3d($x,$y,$z);
+   -ms-transition: scale3d($x,$y,$z);
+    -o-transition: scale3d($x,$y,$z);
+        transform: scale3d($x,$y,$z);
+}
+
+@mixin transform-translate3d($x:0, $y:0, $z:0){
+-webkit-transform: translate3d($x,$y,$z);
+   -moz-transform: translate3d($x,$y,$z);
+   -ms-transition: translate3d($x,$y,$z);
+    -o-transition: translate3d($x,$y,$z);
+        transform: translate3d($x,$y,$z);
+}
+
+@mixin background-image($src:'', $position:center, $size:cover, $bgcolor:rgba(0,0,0,0)){
+  background-image: url($src);
+  background-position: $position;
+  background-size: $size;
+  background-color: $bgcolor;
+  background-repeat: no-repeat;
+}
+
+@mixin linear-gradient($fromColor, $toColor){
+  background-color: $toColor;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor));
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor);
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor);
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor);
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor);
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+}
+
+@mixin appearance($param){
+  -webkit-appearance: $param;
+  -moz-appearance: $param;
+  appearance: $param;
+}
+
+@mixin attributes {
+  display: block;
+  margin: 0;
+  font-size: 1.2rem !important;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.8;
+  color: $black-05;
+  background-color: transparent;
+  @include no-select();
+
+  @content;
+}
+
+@mixin animation($params...) {
+  animation: $params;
+  -webkit-animation: $params;
+}
+
+@mixin elevator($stories:1) {
+	.elevator {
+		@for $i from 1 through $stories {
+			@for $j from 1 through $stories {
+				&[current="#{$i}"][next="#{$j}"] {
+  				$diff : if($i > $j, $i - $j, $j - $i);
+  				$duration: 1000ms + (300ms * $diff);
+					bottom: ($i * $base-story-height) - ($base-story-height - $base-floor-margin) !important;
+					@include transition-duration($duration, 750ms);
+				}
+			}
+		}
+	}
+}
+
+@mixin shaft($stories:1) {
+  [stories="#{$stories}"] {
+    &.shaft {
+      height: $stories * $base-story-height;
+    }
+		@include elevator($stories);
+  }
+}
+
+@mixin fontsrc($path:'./', $name:'', $tag:'', $woff:true) {
+  src: url('#{$path}#{$name}.eot');
+  @if $woff {
+    src: url('#{$path}#{$name}.eot?#iefix') format('embedded-opentype'),
+      url('#{$path}#{$name}.woff') format('woff'),
+      url('#{$path}#{$name}.ttf') format('truetype'),
+      url('#{$path}#{$name}.svg##{$tag}') format('svg');
+  } @else {
+    src: url('#{$path}#{$name}.eot?#iefix') format('embedded-opentype'),
+      url('#{$path}#{$name}.ttf') format('truetype'),
+      url('#{$path}#{$name}.svg##{$tag}') format('svg');
+  }
+}
+
+@mixin font-feature-settings-kern(){
+  font-feature-settings: "kern";
+  -moz-font-feature-settings: "kern=1";
+  -ms-font-feature-settings: normal;
+  -webkit-font-feature-settings: "kern";
+  -o-font-feature-settings: "kern";
+}
+
+@mixin media-query($media...) {
+  @for $i from 1 through length($media){
+    @if nth($media, $i) == iphone4 {
+      @media #{$media-query-iphone4} { @content; }
+    }
+    @else if nth($media, $i) == iphone5 {
+      @media #{$media-query-iphone5} { @content; }
+    }
+    @else if nth($media, $i) == iphone6 {
+      @media #{$media-query-iphone6} { @content; }
+    }
+    @else if nth($media, $i) == tablet {
+      @media #{$media-query-tablet} { @content; }
+    }
+    @else if nth($media, $i) == ipad {
+      @media #{$media-query-ipad} { @content; }
+    }
+    @else if nth($media, $i) == shallow {
+      @media #{$media-query-shallow} { @content; }
+    }
+    @else if nth($media, $i) == desktop {
+      @media #{$media-query-desktop} { @content; }
+    }
+  }
+}

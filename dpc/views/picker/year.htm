@@ -1,9 +1,0 @@
-<ul class="dual-picker">
-	<li class="med" ui-date-time-picker="year.value as year.label for year in years" dpc-model="year" ng-class="{disabled: dpcDisabled}">
-		<div>
-			<select class="clean" ng-options="year.value as year.label for year in years" ng-model="year" ng-disabled="dpcDisabled" tabindex="-1"></select>
-		</div>
-		<button type="button" class="clean right top" ng-click="up()" ng-disabled="dpcDisabled" tabindex="-1"><span></span></button><button type="button" class="clean right bottom" ng-click="down()" ng-disabled="dpcDisabled" tabindex="-1"><span></span></button>
-		<var>{{display}}</var>
-	</li>
-</ul>

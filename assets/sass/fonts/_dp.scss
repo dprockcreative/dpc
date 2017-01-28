@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'dp';
+  font-weight: normal;
+  font-style: normal;
+  @include fontsrc('#{$font_src}dp/', 'dp', 'dp');
+}
+
+.icons {
+  font-family: 'dp' !important;
+  speak: none;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  font-variant: inherit;
+  line-height: inherit;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-logo {
+  &:before,
+  &:after {
+    content: "\e900";
+  }
+}
+.icon-up {
+  &:before,
+  &:after {
+    content: "\e901";
+  }
+}
+.icon-down {
+  &:before,
+  &:after {
+    content: "\e902";
+  }
+}
+.icon-home {
+  &:before,
+  &:after {
+    content: "\e903";
+  }
+}
+.icon-office {
+  &:before,
+  &:after {
+    content: "\e904";
+  }
+}
+.icon-pencil {
+  &:before,
+  &:after {
+    content: "\e905";
+  }
+}
+.icon-phone {
+  &:before,
+  &:after {
+    content: "\e942";
+  }
+}
+.icon-envelop {
+  &:before,
+  &:after {
+    content: "\e945";
+  }
+}
+.icon-history {
+  &:before,
+  &:after {
+    content: "\e94d";
+  }
+}
+.icon-equalizer {
+  &:before,
+  &:after {
+    content: "\e992";
+  }
+}
+.icon-cog {
+  &:before,
+  &:after {
+    content: "\e994";
+  }
+}
+.icon-meter {
+  &:before,
+  &:after {
+    content: "\e9a6";
+  }
+}
+.icon-cross {
+  &:before,
+  &:after {
+    content: "\ea0f";
+  }
+}
+.icon-checkmark {
+  &:before,
+  &:after {
+    content: "\ea10";
+  }
+}
+.icon-radio-checked {
+  &:before,
+  &:after {
+    content: "\ea54";
+  }
+}
+.icon-radio-unchecked {
+  &:before,
+  &:after {
+    content: "\ea56";
+  }
+}
+.icon-github {
+  &:before,
+  &:after {
+    content: "\eab0";
+  }
+}

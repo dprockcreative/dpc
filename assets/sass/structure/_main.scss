@@ -1,0 +1,20 @@
+body {
+  > main {
+    @extend .flex-body-main;
+    @extend .flex-body-main-container;
+
+    position: relative;
+    min-height: 60rem;
+    text-align: left;
+
+    > aside {
+      @extend .flex-body-main-aside;
+      @extend .aside;
+    }
+
+    > section {
+      @extend .flex-body-main-section;
+      @extend .section;
+    }
+  }
+}

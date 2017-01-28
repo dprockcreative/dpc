@@ -1,0 +1,203 @@
+form {
+	padding: 0.7rem 1rem 1rem;
+	text-align: left;
+
+	label {
+
+		&.inline {
+			display: inline-block;
+			margin: 0 0 0 0.6rem;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+
+		&[title] {
+			position: relative;
+
+			&:before {
+				content: attr(title);
+				display: block;
+				margin: 0;
+				padding: 0 0 0.2rem;
+				font-size: 1.2rem;
+				font-weight: 200;
+				font-style: normal;
+				color: $white-05;
+				text-align: left;
+			}
+		}
+
+    span {
+      &.range {
+				display: inline-block;
+				vertical-align: bottom;
+        width: 3rem;
+        height: 3rem;
+        padding: 0.5rem 0 0;
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: $white-05;
+        line-height: normal;
+        background-color: $white-01;
+        text-align: center;
+        @include border(0.1rem solid $white-05, false);
+        @include border-radius(0.3rem);
+
+        + input[type="range"] {
+          display: inline-block;
+          vertical-align: top;
+          min-width: 30rem;
+          height: 3rem;
+          margin-left: 0.5rem;
+          padding: 0.1rem 0.5rem 0;
+        }
+      }
+    }
+	}
+}
+
+input {
+	margin: 0;
+	padding: 0.6rem 0.5rem 0.5rem 1.4rem;
+	font-size: 1.2rem;
+	font-weight: 300;
+	color: $white-05;
+	line-height: normal;
+	background-color: $white-01;
+	text-align: left;
+	@include border(0.1rem solid $white-05, false);
+	@include border-radius(0.3rem);
+
+	&:hover, &:focus {
+		color: $white;
+		background-color: $white-02;
+	}
+	&:active {
+		color: $black;
+		background-color: $white-08;
+		@include border(0.1rem solid $white-09, false);
+	}
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="search"],
+input[type="url"] {
+	padding-top: 1rem;
+	padding-bottom: 0.9rem;
+}
+
+input[type="number"] {
+	width: 3.7rem;
+	padding-left: 0.1rem;
+	padding-right: 0.1rem;
+	text-align: right;
+}
+
+@include input-range-content {
+  width: auto;
+
+	&:active {
+		background-color: $white-02;
+		@include border(0.1rem solid $white-09, false);
+	}
+}
+
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+	padding: 0.8rem 1rem 0.6rem;
+	font-size: 1.2rem;
+	font-weight: 200;
+	color: $white-08;
+	text-align: center;
+	background-color: $white-005;
+	@include border(0.1rem solid $black-06, false);
+	@include border-radius(0.2rem);
+	@include box-sizing(unset);
+
+	&:hover, &:focus {
+		color: $white;
+		background-color: $white-01;
+	}
+
+	&:active {
+		color: $black;
+		border-color: $black-09;
+		background-color: $white-08;
+	}
+
+	&[disabled] {
+		cursor: not-allowed;
+		color: $white-04;
+		border-color: $black-04;
+		background-color: transparent;
+
+		:hover, &:focus, &:active {
+			color: $white-04;
+			background-color: transparent;
+		}
+	}
+
+	&.active {
+		cursor: progress;
+		@include box-shadow(0 0 0.5rem 0 $white-05 inset);
+	}
+}
+
+::-webkit-outer-spin-button,
+::-webkit-inner-spin-button {
+	margin-left: 0.5rem;
+}
+
+::-webkit-input-placeholder {
+  color: $white-05;
+	opacity: 1;
+}
+
+:-moz-placeholder {
+  color: $white-05;
+	opacity: 1;
+}
+
+::-moz-placeholder {
+  color: $white-05;
+	opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: $white-05;
+	opacity: 1;
+}
+
+::-ms-expand {
+  display: none;
+}
+
+::-moz-focus-inner {
+  border: 0 none transparent !important;
+  outline: 0 none transparent !important;
+}
+
+::-moz-focus-inner {
+  border: none;
+}
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0px 0px 0px #000;
+}
+
+@-moz-document url-prefix() {
+  select {
+    padding: 0 4px !important;
+  }
+}

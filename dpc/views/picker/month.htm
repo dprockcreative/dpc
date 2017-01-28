@@ -1,9 +1,0 @@
-<ul class="dual-picker">
-	<li class="wide" ui-date-time-picker="month.value as month.label for month in months" dpc-model="month" ng-class="{disabled: dpcDisabled}">
-		<div>
-			<select class="clean" ng-options="month.value as month.label for month in months" ng-model="month"></select>
-		</div>
-		<button type="button" class="clean right top" ng-click="up()" ng-disabled="dpcDisabled" tabindex="-1"><span></span></button><button type="button" class="clean right bottom" ng-click="down()" ng-disabled="dpcDisabled" tabindex="-1"><span></span></button>
-		<var>{{display}}</var>
-	</li>
-</ul>
